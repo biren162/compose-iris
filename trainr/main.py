@@ -18,11 +18,19 @@ app.add_event_handler("startup", init_model)
 
 # class which is expected in the payload while training
 class TrainIn(BaseModel):
-    sepal_length: float
-    sepal_width: float
-    petal_length: float
-    petal_width: float
-    flower_class: str
+    p1: float
+    p2: float
+    p3: float
+    p4: float
+    p5: float
+    p6: float
+    p7: float
+    p8: float
+    p9: float
+    p10: float
+    p11: float
+    p12: float
+    wine_class: str
 
 
 # Route definitions
@@ -46,4 +54,4 @@ def train(data: List[TrainIn]):
 # Main function to start the app when main.py is called
 if __name__ == "__main__":
     # Uvicorn is used to run the server and listen for incoming API requests on 0.0.0.0:8888
-    uvicorn.run("main:app", host="0.0.0.0", port=7777, reload=True)
+    uvicorn.run("main:app", host="0.0.0.0", port=7000, reload=True)

@@ -6,18 +6,18 @@ services:
       replicas: 1
     build: processr
     environment:
-      - TRAINR_ENDPOINT=http://trainr:7777
+      - TRAINR_ENDPOINT=http://trainr:7000
     ports:
-      - "8888:8888"
+      - "8000:8000"
 
   trainr:
     deploy:
       replicas: 1
     build: trainr
     environment:
-      - PREDICTR_ENDPOINT=http://predictr:9999
+      - PREDICTR_ENDPOINT=http://predictr:9000
     ports:
-      - "7777:7777"
+      - "7000:7000"
     volumes:
       - ./models:/app/models
 
@@ -26,6 +26,6 @@ services:
       replicas: 1
     build: predictr
     ports:
-      - "9999:9999"
+      - "9000:9000"
     volumes:
       - ./models:/app/models

@@ -13,11 +13,19 @@ app = FastAPI(title="processr", docs_url="/")
 
 # class which is expected in the payload while training
 class DataIn(BaseModel):
-    sepal_length: float
-    sepal_width: float
-    petal_length: float
-    petal_width: float
-    flower_class: str
+    p1: float
+    p2: float
+    p3: float
+    p4: float
+    p5: float
+    p6: float
+    p7: float
+    p8: float
+    p9: float
+    p10: float
+    p11: float
+    p12: float
+    wine_class: str
 
 
 # Route definitions
@@ -38,5 +46,5 @@ def process(data: List[DataIn]):
 
 # Main function to start the app when main.py is called
 if __name__ == "__main__":
-    # Uvicorn is used to run the server and listen for incoming API requests on 0.0.0.0:8888
-    uvicorn.run("main:app", host="0.0.0.0", port=8888, reload=True)
+    # Uvicorn is used to run the server and listen for incoming API requests on 0.0.0.0:8000
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
